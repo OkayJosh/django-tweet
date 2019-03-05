@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from tweet.views import Index
+from tweet.views import Index, Profile
 
 urlpatterns = [
     path('',Index.as_view(), name='index'),
+    path('user/<username>', Profile.as_view()),
     path('admin/', admin.site.urls),
 ]

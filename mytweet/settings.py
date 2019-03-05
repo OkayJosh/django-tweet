@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     #internal package
     'tweet',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mytweet.urls'
+
+# implemented for our customed user model
+AUTH_USER_MODEL = 'user_profile.User'
 
 TEMPLATES = [
     {

@@ -11,3 +11,14 @@ class Index(View):
     # def post(self, request):
     #     return HttpResponse ()
 
+class Profile(View):
+    """
+    user profile page reachable through /user/<username>
+    """
+    def get (self, request, username):
+        params = dict()
+        user = user.objects.get(username=username)
+        params["tweets"] = tweets
+        params["user"] = user
+        return render (request,'profile.htm', params)
+
