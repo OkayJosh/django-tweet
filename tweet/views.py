@@ -1,4 +1,7 @@
 from django.shortcuts import render
+
+from user_profile.models import User
+from .models import Tweet
 from django.views import View
 
 # Create your views here.
@@ -16,9 +19,9 @@ class Profile(View):
     user profile page reachable through /user/<username>
     """
     def get (self, request, username):
-        params = dict()
-        user = user.objects.get(username=username)
-        params["tweets"] = tweets
-        params["user"] = user
-        return render (request,'profile.htm', params)
+        tweets = Tweet.objects.filter(user__username=username)
+        return render (request,'profile.htm',{'tweets': tweets})
+
+
+
 

@@ -10,9 +10,18 @@
     {% bootstrap_messages %}
     
     <body>
-        {% block content %}
-        <h1 class="text-info">Hello {{name}}!</h1>
-        {% endblock %}
+        <nav class="navbar navbar-default navbar-fixed-top bg-light" role="navigation">
+        <a class="navbar-brand" href="#">My Tweets</a>
+        <p class="navbar-brand navbar-right">User profile Page</p>
+        </nav>
+        <div class="container">
+            {% block content %}
+            <h1 class="text-info">Hello {{name}}!</h1>
+            {% endblock %}
+        </div>
+        <footer class="navbar navbar-default navbar-fixed-bottom bg-light" role="navigation">
+        <p class="navbar-brand navbar-right">Footer</p>
+        </footer>
     </body>
 </html>
 

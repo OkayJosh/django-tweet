@@ -1,1 +1,3 @@
 *.pyc
+/vtweet
+.sqlite3
